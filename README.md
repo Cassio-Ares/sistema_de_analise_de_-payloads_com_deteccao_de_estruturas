@@ -1,1 +1,1 @@
-# sistema_de_analise_de_-payloads_com_deteccao_de_estruturas
+# Sistema de análise de payloads com detecção de estruturas e sugestões de implementação.
