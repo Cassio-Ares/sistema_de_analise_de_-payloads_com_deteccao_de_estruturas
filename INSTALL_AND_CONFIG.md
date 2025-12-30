@@ -146,21 +146,22 @@ console.log('📚 Docs available at http://localhost:3333/docs')
 ```
 
 ### Basico de rota
-````
+
+```
 import type { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import { z } from 'zod'
 
 export const listWebhooks: FastifyPluginAsyncZod = async (app) => {
   app.get(
-    '/api/webhooks', => url 
+    '/api/webhooks', => url
     {
-      schema: {  => preenche o swagger como as informações 
+      schema: {  => preenche o swagger como as informações
         summary: 'List webhooks',
         tags: ['Webhooks'],
         querystring: z.object({
           limit: z.coerce.number().min(1).max(100).default(20),
         }),
-        response: {  => configuração da response 
+        response: {  => configuração da response
           200: z.array(
             z.object({
               id: z.string(),
@@ -190,13 +191,27 @@ export const listWebhooks: FastifyPluginAsyncZod = async (app) => {
     },
   )
 }
-````
+```
 
 - pnpm i drizzle-kit -D
 - pnpm i drizzle-orm drizzle-zod pg
+- pnpm i @types/pg -D
+- pnpm i uuidv7
 
+lembrar detalhar drizzle config, e arquivos db
+
+"dev": "tsx watch --env-file=.env src/server.ts",
+"start": "node dist/server.js",
+"format": "biome format --write",
+"db:generate": "drizzle-kit generate",
+"db:migrate": "drizzle-kit migrate",
+"db:studio": "drizzle-kit studio"
+
+ pnpm run db:generate
+ pnpm run db:migrate
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;API:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ### pnpm create vite@latest web - cria a parta e configura o vite
 
 //https://commitlint.js.org/
