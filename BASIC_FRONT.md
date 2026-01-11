@@ -38,3 +38,7 @@ pnpm i lucide-react
 
 
 pnpm add @radix-ui/react-checkbox
+
+-- colocar bloco de codigos
+
+pnpm i shiki 
