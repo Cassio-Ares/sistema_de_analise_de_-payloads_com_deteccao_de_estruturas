@@ -29,8 +29,12 @@ no index.html
 
 pnpm i react-resizable-panels
 
+- https://www.tailwind-variants.org/docs/variants
 pnpm i tailwind-variants
 
 pnpm i tailwind-merge
 
 pnpm i lucide-react
+
+
+pnpm add @radix-ui/react-checkbox

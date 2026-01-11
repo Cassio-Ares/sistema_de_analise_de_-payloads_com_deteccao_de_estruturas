@@ -1,6 +1,6 @@
 import { CopyIcon } from "lucide-react";
 import { IconButton } from "./ui/IconButton";
-
+import { WebhooksList } from "./WebhooksList";
 
 export function Sidebar() {
   return (
@@ -13,13 +13,16 @@ export function Sidebar() {
       </div>
 
       <div className="flex items-center gap-2 border-b border-zinc-700 bg-zinc-800 px-4 py-2.5">
+        {/**
+         *  IMPORTANTE a o elemento pai do elemento que vai ter o truncate precisa ter a classe min-w-0
+         * */}
         <div className="flex-1 min-w-0 flex items-center gap-1 text-xs font-mono text-zinc-300">
           <span className="truncate">http://localhost:3333/api/capture</span>
         </div>
         <IconButton icon={<CopyIcon className="size-4" />} />
       </div>
 
-      {/* <WebhooksList /> */}
+      <WebhooksList />
     </div>
   );
 }
