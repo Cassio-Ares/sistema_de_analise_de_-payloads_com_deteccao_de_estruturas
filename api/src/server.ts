@@ -1,4 +1,7 @@
 import { _env } from "@/env";
+import { deleteWebhook } from "@/routes/deleteWebhook";
+import { getWebhook } from "@/routes/getWebhook";
+import { listWebhooks } from "@/routes/listWebhooks";
 import { fastifyCors } from "@fastify/cors";
 import { fastifySwagger } from "@fastify/swagger";
 import ScalarApiReference from "@scalar/fastify-api-reference";
@@ -35,6 +38,10 @@ app.register(fastifySwagger, {
 app.register(ScalarApiReference, {
   routePrefix: "/docs",
 });
+
+app.register(getWebhook);
+app.register(deleteWebhook);
+app.register(listWebhooks);
 
 app.listen({ port: _env.PORT, host: "0.0.0.0" }).then(() => {
   console.log("🔥 HTTP server running on http://localhost:3333!");
