@@ -29,3 +29,12 @@ logica api cursor-based para fazer paginação infinita no front
         const hasMore = result.length > limit;
         const itens = hasMore ? result.slice(0, limit) : result;
         const nextCursor = hasMore ? itens[itens.length - 1].id : null;
+
+
+Dict = Record<string, T>
+const headers: NodeJS.Dict<string> = { //
+  "content-type": "application/json",
+  authorization: "Bearer token",
+};
+
+console.log(headers["content-type"]);
