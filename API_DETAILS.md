@@ -38,3 +38,10 @@ const headers: NodeJS.Dict<string> = { //
 };
 
 console.log(headers["content-type"]);
+
+criar seed para geral dados fake 
+
+pnpm i @faker-js/faker -D
+
+
+script "db:seed": "tsx --env-file=.env src/db/seed.ts"

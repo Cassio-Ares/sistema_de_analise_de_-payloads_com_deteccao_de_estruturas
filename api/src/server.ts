@@ -1,4 +1,5 @@
 import { _env } from "@/env";
+import { captureWebhook } from "@/routes/captureWebhook";
 import { deleteWebhook } from "@/routes/deleteWebhook";
 import { getWebhook } from "@/routes/getWebhook";
 import { listWebhooks } from "@/routes/listWebhooks";
@@ -42,6 +43,7 @@ app.register(ScalarApiReference, {
 app.register(getWebhook);
 app.register(deleteWebhook);
 app.register(listWebhooks);
+app.register(captureWebhook);
 
 app.listen({ port: _env.PORT, host: "0.0.0.0" }).then(() => {
   console.log("🔥 HTTP server running on http://localhost:3333!");
