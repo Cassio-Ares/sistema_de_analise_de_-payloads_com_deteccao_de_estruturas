@@ -28,8 +28,10 @@ const RootLayout = () => (
 
 ````
  <Suspense fallback={<div className="flex-1 flex items-center justify-center">Loading...</div>}>
-         <WebhooksList />
+         <WebhooksList /> 31>:21
   </Suspense>
 ````
 
 rota com id => webhook.$id
+
+  <Link to="/webhook/$id" params={{ id: webhook.id }} className="flex flex-1 min-w-0 items-start gap-3">
