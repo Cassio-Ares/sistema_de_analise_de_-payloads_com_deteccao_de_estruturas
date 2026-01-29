@@ -13,7 +13,7 @@ const RootLayout = () => (
 
 ```
  const {data, isLoading} = useQuery({
-    queryKey: ["webhooks"],
+    queryilççli: ["webhooks"],
     queryFn: async () => {
       const response = await fetch('http://localhost:3333/api/webhooks');
 
@@ -47,3 +47,22 @@ return lastPage.nextCursor ?? undefined;
 },
 initialPageParam: undefined,
 });
+
+
+mutate => forma de alterar no tastack
+
+  const queryClient = useQueryClient() 
+
+  const { mutate: deleteWebhook } = useMutation({
+    mutationFn: async (id: string) => {
+      await fetch(`http://localhost:3333/api/webhooks/${id}`, {
+        method: 'DELETE',
+      })
+    },
+    onSuccess: () => {  // forma de zerar cache e chamar e atualizar dados 
+      queryClient.invalidateQueries({
+        queryKey: ['webhooks'], //atualizar os dados apos deletar de query com essa key
+      })
+    },
+
+no button => onClick={() => deleteWebhook(webhook.id)}
